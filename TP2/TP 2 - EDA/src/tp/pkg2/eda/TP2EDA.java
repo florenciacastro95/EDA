@@ -25,6 +25,7 @@ public class TP2EDA {
         System.out.println("Tiempo utilizado:");
         System.out.println(System.currentTimeMillis()-startTime);
 
+        //hola
         /*
         System.out.println("SHELLSORT");
         arreglo = Sort.carga(10000);
