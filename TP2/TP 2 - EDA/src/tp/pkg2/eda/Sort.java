@@ -61,6 +61,16 @@ public class Sort {
         }
     }
     
+    public void unaSimpleSuma(){
+        int suma;
+        int num=2;
+        int num2=2;
+        
+        suma = num+num2;
+        System.out.println("La suma es" + suma);
+        
+    }
+    
 
 }
 
