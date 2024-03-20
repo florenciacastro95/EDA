@@ -26,6 +26,7 @@ public class TP2EDA {
         System.out.println(System.currentTimeMillis()-startTime);
 
         //hola
+        //Esto es solo un comentario
         /*
         System.out.println("SHELLSORT");
         arreglo = Sort.carga(10000);
