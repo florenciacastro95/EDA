@@ -21,7 +21,7 @@ public class TP2EDA {
         startTime = System.currentTimeMillis();
         Sort.insertionSort(arreglo);
         Sort.mostrar(arreglo);
-                System.out.println("");
+        System.out.println("");
         System.out.println("Tiempo utilizado:");
         System.out.println(System.currentTimeMillis()-startTime);
 
