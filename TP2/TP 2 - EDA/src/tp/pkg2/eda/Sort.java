@@ -47,6 +47,20 @@ public class Sort {
         }
     }
     
+    //metodo para añadir una busqueda
+    public static void insertionSort(int[] arreglo) {
+        int ult = arreglo.length;
+        for (int i = 1; i < ult; ++i) {
+            int temp = arreglo[i];
+            int j = i;
+            while (j > 0 && arreglo[j-1] > temp) {
+                arreglo[j] = arreglo[j-1];
+                j = j - 1;
+            }
+            arreglo[j] = temp;
+        }
+    }
+    
 
 }
 
