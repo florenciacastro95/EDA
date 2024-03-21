@@ -7,20 +7,20 @@ public class Sort {
     public static int[] carga(int cantidadNumeros) {
         // Crear un arreglo para almacenar los números aleatorios
         int[] numerosAleatorios = new int[cantidadNumeros];
-        
+
         // Crear un objeto Random para generar los números aleatorios
         Random random = new Random();
-        
+
         // Generar y cargar los números aleatorios en el arreglo
         for (int i = 0; i < cantidadNumeros; i++) {
             numerosAleatorios[i] = random.nextInt(10000); // Genera números aleatorios en todo el rango de int
         }
-        
+
         // Devolver el arreglo cargado con números aleatorios
         return numerosAleatorios;
     }
-    
-     public static void mostrar(int[] numeros) {
+
+    public static void mostrar(int[] numeros) {
         for (int i = 0; i < numeros.length; i++) {
             System.out.printf("%6d ", numeros[i]); // Ajustar el ancho del campo a 12 para que se muestren en columnas
             if ((i + 1) % 15 == 0) { // Nueva línea cada 15 números
@@ -28,66 +28,91 @@ public class Sort {
             }
         }
     }
+
     public static void bubbleSort(int arreglo[], int tamaño) {
         int i, j, temp; // Variable temp para el intercambio
         boolean cambio;
         for (i = (tamaño - 1); i >= 0; i--) {
-            cambio=false;
+            cambio = false;
             for (j = 1; j <= i; j++) {
                 if (arreglo[j - 1] > arreglo[j]) {
                     temp = arreglo[j - 1];
                     arreglo[j - 1] = arreglo[j];
                     arreglo[j] = temp;
-                    cambio=true;
+                    cambio = true;
                 }
             }
-           if(cambio==false)
-               break;
-            
+            if (cambio == false) {
+                break;
+            }
+
         }
     }
-    
+
     //metodo para añadir una busqueda
     public static void insertionSort(int[] arreglo) {
         int ult = arreglo.length;
         for (int i = 1; i < ult; ++i) {
             int temp = arreglo[i];
             int j = i;
-            while (j > 0 && arreglo[j-1] > temp) {
-                arreglo[j] = arreglo[j-1];
+            while (j > 0 && arreglo[j - 1] > temp) {
+                arreglo[j] = arreglo[j - 1];
                 j = j - 1;
             }
             arreglo[j] = temp;
         }
     }
-    
-    public void unaSimpleSuma(){
+
+    public void unaSimpleSuma() {
         int suma;
-        int num=2;
-        int num2=2;
-        
-        suma = num+num2;
+        int num = 2;
+        int num2 = 2;
+
+        suma = num + num2;
         System.out.println("La suma es" + suma);
         System.out.println("No quiero tu comentario");
     }
-//esto es otro comentario    
-
+    
+    //Shellsort final
     public static void shellSort(int[] arreglo) {
-        int tam = arreglo.length;
-
-        // Inicializar el intervalo de la brecha
-        for (int gap = tam/2; gap > 0; gap /= 2) {
-            // Realizar el ordenamiento de inserción para la brecha actual
-            for (int i = gap; i < tam; i++) {
-                int temp = arreglo[i];
-                int j=i;
-                while(j >= gap && arreglo[j - gap] > temp) {
-                    arreglo[j] = arreglo[j - gap];
-                    j -= gap;
+        int n = arreglo.length;
+        int brecha = n / 2;
+        int actual;
+        int ind;
+        while (brecha > 0) {
+            for (int r = brecha; r < n; r++) {
+                actual = arreglo[r];
+                ind = r;
+                while (ind >= brecha && arreglo[ind - brecha] > actual) {
+                    arreglo[ind] = arreglo[ind - brecha];
+                    ind -= brecha;
                 }
-                arreglo[j] = temp;
+                arreglo[ind] = actual;
             }
+            brecha = brecha / 2;
         }
-    }
-}
 
+    }
+    
+//Shellsort pro 
+
+//    public static void shellSort(int[] arreglo) {
+//        int tam = arreglo.length;
+//
+//        // Inicializar el intervalo de la brecha
+//        for (int gap = tam/2; gap > 0; gap /= 2) {
+//            // Realizar el ordenamiento de inserción para la brecha actual
+//            for (int i = gap; i < tam; i++) {
+//                int temp = arreglo[i];
+//                int j=i;
+//                while(j >= gap && arreglo[j - gap] > temp) {
+//                    arreglo[j] = arreglo[j - gap];
+//                    j -= gap;
+//                }
+//                arreglo[j] = temp;
+//            }
+//        }
+//    }
+    
+    
+}
