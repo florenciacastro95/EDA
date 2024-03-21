@@ -91,7 +91,28 @@ public class Sort {
 //    }
     
     
-    
+    //Shellsort final
+    public static void shellSort(int[] arreglo) {
+        int n = arreglo.length;
+        int brecha = n / 2;
+        int actual;
+        int ind;
+        while (brecha > 0) {
+            for (int r = brecha; r < n; r++) {
+                actual = arreglo[r];
+                ind = r;
+                while (ind >= brecha && arreglo[ind - brecha] > actual) {
+                    arreglo[ind] = arreglo[ind - brecha];
+                    ind -= brecha;
+                }
+                arreglo[ind] = actual;
+            }
+            brecha = brecha / 2;
+        }
+
+    }
+
+//Shellsort pro
     
 }
 
