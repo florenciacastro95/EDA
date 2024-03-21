@@ -68,9 +68,26 @@ public class Sort {
         
         suma = num+num2;
         System.out.println("La suma es" + suma);
-        System.out.println("Agrego un sout");
+        System.out.println("No quiero tu comentario");
     }
-    
+//esto es otro comentario    
 
+    public static void shellSort(int[] arreglo) {
+        int tam = arreglo.length;
+
+        // Inicializar el intervalo de la brecha
+        for (int gap = tam/2; gap > 0; gap /= 2) {
+            // Realizar el ordenamiento de inserción para la brecha actual
+            for (int i = gap; i < tam; i++) {
+                int temp = arreglo[i];
+                int j=i;
+                while(j >= gap && arreglo[j - gap] > temp) {
+                    arreglo[j] = arreglo[j - gap];
+                    j -= gap;
+                }
+                arreglo[j] = temp;
+            }
+        }
+    }
 }
 
