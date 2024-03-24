@@ -13,7 +13,7 @@ public class Sort {
         
         // Generar y cargar los números aleatorios en el arreglo
         for (int i = 0; i < cantidadNumeros; i++) {
-            numerosAleatorios[i] = random.nextInt(10000); // Genera números aleatorios en todo el rango de int
+            numerosAleatorios[i] = random.nextInt(10); // Genera números aleatorios en todo el rango de int
         }
         
         // Devolver el arreglo cargado con números aleatorios
@@ -61,15 +61,6 @@ public class Sort {
         }
     }
     
-    public void unaSimpleSuma(){
-        int suma;
-        int num=2;
-        int num2=2;
-        
-        suma = num+num2;
-        System.out.println("La suma es" + suma);
-        System.out.println("No quiero tu comentario");
-    }
 //shell sort, demasiado pro para mi gusto    
 
 //    public static void shellSort(int[] arreglo) {
@@ -111,8 +102,34 @@ public class Sort {
         }
 
     }
-
-//Shellsort pro
     
+    //Bucket sort 
+    public static int[] bucketSort(int[]arr){
+    
+        int max=arr[0];
+        int j=0;
+        int[]arrInd;
+        int[]arr2=new int[arr.length];
+        for (int i = 1; i < arr.length; i++) {
+            if(arr[i]>max){
+                max=arr[i];
+            }
+        }
+        arrInd= new int[max+1];
+        for (int i = 0; i < arr.length; i++) {
+            arrInd[arr[i]]+=1;
+        }
+        
+        for (int i = 0; i < arrInd.length; i++) {
+            while (arrInd[i]>0){
+                arr2[j]=i;
+                j++;
+                arrInd[i]-=1;
+            } 
+        }
+        arr=arr2;
+        
+        return arr2;
+    }
 }
 
