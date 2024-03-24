@@ -28,10 +28,10 @@ public class Sort {
             }
         }
     }
-    public static void bubbleSort(int arreglo[], int tamaño) {
+    public static void bubbleSort(int arreglo[]) {
         int i, j, temp; // Variable temp para el intercambio
         boolean cambio;
-        for (i = (tamaño - 1); i >= 0; i--) {
+        for (i = arreglo.length-1; i >= 0; i--) {
             cambio=false;
             for (j = 1; j <= i; j++) {
                 if (arreglo[j - 1] > arreglo[j]) {
@@ -104,12 +104,11 @@ public class Sort {
     }
     
     //Bucket sort 
-    public static int[] bucketSort(int[]arr){
+    public static void bucketSort(int[]arr){
     
         int max=arr[0];
         int j=0;
         int[]arrInd;
-        int[]arr2=new int[arr.length];
         for (int i = 1; i < arr.length; i++) {
             if(arr[i]>max){
                 max=arr[i];
@@ -122,14 +121,12 @@ public class Sort {
         
         for (int i = 0; i < arrInd.length; i++) {
             while (arrInd[i]>0){
-                arr2[j]=i;
+                arr[j]=i;
                 j++;
                 arrInd[i]-=1;
             } 
         }
-        arr=arr2;
-        
-        return arr2;
+ 
     }
 }
 

@@ -10,12 +10,11 @@ public class TP2EDA {
         //BUBBLESORT
         System.out.println("BUBBLESORT");
         arreglo = Sort.carga(10);
-       
         System.out.println("DESORDENADO");
         Sort.mostrar(arreglo);
         System.out.println("");
-         System.out.println("ORDENADO");
-        Sort.bubbleSort(arreglo, 10);
+        System.out.println("ORDENADO");
+        Sort.bubbleSort(arreglo);
         Sort.mostrar(arreglo);
         System.out.println("");
         System.out.println("Tiempo utilizado:");
@@ -45,8 +44,12 @@ public class TP2EDA {
         System.out.println("BUCKETSORT");
         arreglo = Sort.carga(10);
         startTime = System.currentTimeMillis();
-
-        Sort.mostrar(Sort.bucketSort(arreglo));
+        System.out.println("DESORDENADO");
+        Sort.mostrar(arreglo);
+        System.out.println("");
+        System.out.println("ORDENADO");
+        Sort.bucketSort(arreglo);
+        Sort.mostrar(arreglo);
         System.out.println("");
         System.out.println("Tiempo utilizado:");
         System.out.println(System.currentTimeMillis()-startTime);
